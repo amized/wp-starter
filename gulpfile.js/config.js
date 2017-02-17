@@ -47,7 +47,7 @@ module.exports = {
         copyTheme: {
             src: 'theme',
             dest: '.',
-            extensions: ['php', 'css', 'html', 'twig']
+            extensions: ['php', 'css', 'html', 'twig', '*']
         },
         styles: {
             src: 'styles',

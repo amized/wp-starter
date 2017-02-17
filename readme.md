@@ -2,7 +2,7 @@
 
 Wordpress starter pack for building themes from scratch. Includes:
 
-* JS babel compiling with Browserify
+* JS Babel compiling with Browserify
 * Sass compiling
 * Watch and autoreload
 * Icon fonts
@@ -52,10 +52,8 @@ If you dont have the right version, please download the latest from <https://nod
 
 * A browser should load and direct you to the wp install page. Follow the instructions.
 
-* After installing, make sure to activate your new theme under 
-
-		Appearence -> Themes
-
+* After installing, your new theme will be automatically selected.
+* To set up a new theme under a different name, just change the ```themeName``` parameter in ```site-config.json```, and then run gulp again.
 
 	
 	
