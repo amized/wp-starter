@@ -5,7 +5,7 @@ var siteConfig = require('../site-config.json');
 module.exports = {
     root: {
         src: path.join(__dirname, '../src'),
-        dest: path.join(__dirname, '../wordpress/wp-content/themes/nbcuux-portfolio/')
+        dest: path.join(__dirname, '../wordpress/wp-content/themes/' + siteConfig.themeName)
     },
     watchableTasks: ['copyScripts', 'copyImg', 'copyFonts', 'copyTheme', 'ejs', 'scripts', 'styles', 'iconfont'],
     tasks: {

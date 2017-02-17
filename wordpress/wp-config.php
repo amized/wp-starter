@@ -13,19 +13,23 @@
  *
  * @package WordPress
  */
-
 if(file_exists(dirname(__FILE__) . '/wp-local-config.php')) {
 	include 'wp-local-config.php';
 }
 
-
-if(file_exists('../site-config.json')) {
-	$str = file_get_contents('../site-config.json');
+if(file_exists(dirname(__FILE__) . '/../site-config.json')) {
+	$str = file_get_contents(dirname(__FILE__) . '/../site-config.json');
 	$config = json_decode($str, true);
+	$db_params = ["DB_NAME", "DB_USER", "DB_PASSWORD", "DB_HOST", "DB_CHARSET", "DB_COLLATE"];
+
+	foreach ($db_params as $param) {
+		define($param, $config[$param]);
+	}
+
 	define('WP_HOME', $config['siteUrl']);
 	define('WP_SITEURL', $config['siteUrl']);
+	define('WP_DEFAULT_THEME', $config['themeName'] );
 }
-
 
 
 /**#@+
@@ -66,6 +70,7 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
+
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

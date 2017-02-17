@@ -1,7 +1,8 @@
 {% extends "_base.html" %}
 
 {% block content %}
-	<h1>Welcome to the wordpress base theme</h1>
+	<h1>{{post.title}}</h1>
+	<div>{{ post.post_content | raw }}</div>
 	<div id="blank-component">
 	</div>
 {% endblock %}

@@ -1,4 +1,5 @@
 <?php
 	$context = Timber::get_context();
-	Timber::render('page.html', $context);
+	$context["post"] = new TimberPost();
+	Timber::render('sample-template.html', $context);
 ?>

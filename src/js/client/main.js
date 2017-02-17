@@ -1,21 +1,31 @@
-import React from 'react'
-import { render } from 'react-dom'
-
-
-
-
-
 
 
 
 /*
+ *
+ *
+ * Main entry point for js
+ *
+ * 
+ */
 
-REACT
 
-import App from '../components/App'
 
-render(
-	<App />,
-  document.getElementById('root')
-)
-*/
+import React from 'react'
+import { render } from 'react-dom'
+
+
+// --- JQuery ---
+//import $ from "jquery"
+//window.$ = $
+
+
+
+// --- React ---
+
+//import App from '../components/App'
+
+//render(
+//	<App />,
+//  document.getElementById('root')
+//)
