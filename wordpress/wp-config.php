@@ -13,9 +13,6 @@
  *
  * @package WordPress
  */
-if(file_exists(dirname(__FILE__) . '/wp-local-config.php')) {
-	include 'wp-local-config.php';
-}
 
 if(file_exists(dirname(__FILE__) . '/../site-config.json')) {
 	$str = file_get_contents(dirname(__FILE__) . '/../site-config.json');
@@ -78,3 +75,15 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/** Switches the theme to the theme name from config */
+if(file_exists(dirname(__FILE__) . '/../site-config.json')) {
+	$str = file_get_contents(dirname(__FILE__) . '/../site-config.json');
+	$config = json_decode($str, true);
+	switch_theme($config['themeName']);
+}
+
+
+
+
+
